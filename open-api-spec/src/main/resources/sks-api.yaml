@@ -1,0 +1,49 @@
+openapi: 3.0.0
+
+info:
+  version: 0.0.1
+  title: Javasks Service
+  description: The library service
+
+servers:
+  - url: http://localhost:8080/
+    description: Here is my API
+
+
+tags:
+  - name: "JavaSKS"
+
+
+paths:
+
+  /books:
+    get:
+      summary: This is javasks (Sandeep's Repo)
+      tags:
+        - "JavaSKS"
+      description: This is a short description about javaSKS
+      operationId: booksInjavaSKS
+      responses:
+        "200":
+          description: This means its ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+
+components:
+
+  schemas:
+
+    Book:
+      description: This is the book model
+      type: object
+      properties:
+        name:
+          description: The name of book
+          type: string
+        bookAuthor:
+          description: name of author
+          type: string
